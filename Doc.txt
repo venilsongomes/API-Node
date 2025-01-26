@@ -1,0 +1,11 @@
+1 - instalar o Node
+2 - Criar arquivo de Config Node -> npm init -y
+3 - Criar arquivo de config  -> Server.js
+4 - instalar express -> npm install express
+5 - instalar o restart automatico do Server -  node --watch server.js
+6 - Http Status
+    - 2xx -> Sucesso
+    - 4xx -> Erro Cliente
+    - 5xx -> Erro Servidor
+
+    

@@ -1,0 +1,24 @@
+{
+  "name": "api-node",
+  "version": "1.0.0",
+  "description": "Testes API com node",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/venilsongomes/API-Node.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/venilsongomes/API-Node/issues"
+  },
+  "homepage": "https://github.com/venilsongomes/API-Node#readme",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
