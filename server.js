@@ -15,6 +15,4 @@ app.get('/usuarios', (req,res)=> {
 
 })
 
-
-
 app.listen(3000)
