@@ -1,0 +1,24 @@
+1 - instalar o Node - Baixar
+2 - Criar arquivo de Config Node -> npm init -y
+3 - Criar arquivo de config  -> Server.js
+4 - instalar express -> npm install express
+5 - instalar prisma => npm install prisma --save-dev
+6 - instalar o restart automatico do Server -  node --watch server.js
+7 - Criar esquema -> npx prisma init
+8 - instalar prisma Cliente -> npm install @prisma/client
+9 - Verificar se Está tudo certo com a conexão -> npx prisma db push
+10 - Abrir Prisma Studio -> npx prisma Studio
+
+
+6 - Http Status
+
+    - 2xx -> Sucesso
+    - 4xx -> Erro Cliente
+    - 5xx -> Erro Servidor
+
+7  - 
+8  - 
+9  - 
+10 - 
+
+    
