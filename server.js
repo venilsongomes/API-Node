@@ -5,7 +5,7 @@ import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 
 const app = express()
-app.use(express.json()) // Usar Json
+app.use(express.json())
 
 app.post('/usuarios', async (req, res)=>{
     await prisma.user.create({
@@ -19,12 +19,31 @@ app.post('/usuarios', async (req, res)=>{
 })
 
 app.get('/usuarios',async (req, res) => {
+ 
+    let users = []
+    if(req.query){
+     users = await prisma.user.findMany({
+        where: {
+       name: req.query.name,
+       age: req.query.age
+        }
+     })
+    }else{
+        users = await prisma.user.findMany()
+    }
+    
+      res.status(200).json(users)
+  })
+
+
+/*app.get('/usuarios',async (req, res) => {
 
         const users = await prisma.user.findMany()
           res.status(200).json(users)
       })
+*/
 
-      app.put('/usuarios/:id', async (req, res)=>{
+app.put('/usuarios/:id', async (req, res)=>{
         await prisma.user.update({
            where: {
             id: req.params.id
@@ -38,7 +57,7 @@ app.get('/usuarios',async (req, res) => {
         })
     })
 
-      app.delete('/usuarios/:id', async (req, res)=> {
+app.delete('/usuarios/:id', async (req, res)=> {
 
         await prisma.user.delete({
             where: {
