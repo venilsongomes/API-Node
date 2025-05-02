@@ -18,3 +18,21 @@ model User {
   name    String   ?
   age     String   ?
 }
+
+model Produto {
+  id            String   @id @default(auto()) @map("_id") @db.ObjectId
+  name          String ?
+  quantidade    String?
+  
+}
+
+model Baixa {
+  id            String   @id @default(auto()) @map("_id") @db.ObjectId
+  produto         String ?
+  quantidade     String?
+  nome          String?
+  setor       String?
+  data        String?
+
+  
+}

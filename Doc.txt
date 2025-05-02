@@ -8,7 +8,8 @@
 8 - instalar prisma Cliente -> npm install @prisma/client
 9 - Verificar se Está tudo certo com a conexão -> npx prisma db push
 10 - Abrir Prisma Studio -> npx prisma Studio
-11 - 
+11 - Quando atualizar o esquemar => npx prisma generate
+
 
 
 ---------- Http Status----------------
