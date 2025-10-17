@@ -1,2 +1,9 @@
-main\java\CalculadoraCliente.class
-main\java\CalculadoraServer.class
+com\example\grpc\calculator\CalcResponse.class
+com\example\grpc\calculator\CalcRequest$Builder.class
+com\example\grpc\calculator\CalcResponse$1.class
+com\example\grpc\calculator\CalculatorProto.class
+com\example\grpc\calculator\CalcRequest.class
+com\example\grpc\calculator\CalcRequest$1.class
+com\example\grpc\calculator\CalcResponse$Builder.class
+com\example\grpc\calculator\CalcResponseOrBuilder.class
+com\example\grpc\calculator\CalcRequestOrBuilder.class

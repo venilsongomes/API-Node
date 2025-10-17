@@ -3,7 +3,6 @@ import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import io.grpc.Status;
 import io.grpc.stub.StreamObserver;
-
 import java.io.IOException;
 
 public class CalculatorServer {
@@ -29,7 +28,8 @@ public class CalculatorServer {
         @Override
         public void subtract(CalcRequest request, StreamObserver<CalcResponse> responseObserver) {
             double result = request.getNumber1() - request.getNumber2();
-            System.out.println("Requisição de Subtração recebida: " + request.getNumber1() + " - " + request.getNumber2());
+            System.out.println(
+                    "Requisição de Subtração recebida: " + request.getNumber1() + " - " + request.getNumber2());
             CalcResponse response = CalcResponse.newBuilder().setResult(result).build();
             responseObserver.onNext(response);
             responseObserver.onCompleted();
@@ -38,7 +38,8 @@ public class CalculatorServer {
         @Override
         public void multiply(CalcRequest request, StreamObserver<CalcResponse> responseObserver) {
             double result = request.getNumber1() * request.getNumber2();
-            System.out.println("Requisição de Multiplicação recebida: " + request.getNumber1() + " * " + request.getNumber2());
+            System.out.println(
+                    "Requisição de Multiplicação recebida: " + request.getNumber1() + " * " + request.getNumber2());
             CalcResponse response = CalcResponse.newBuilder().setResult(result).build();
             responseObserver.onNext(response);
             responseObserver.onCompleted();
@@ -50,14 +51,14 @@ public class CalculatorServer {
                 // Envia um erro para o cliente
                 System.out.println("Erro: Tentativa de divisão por zero.");
                 responseObserver.onError(
-                    Status.INVALID_ARGUMENT
-                          .withDescription("Não é possível dividir por zero")
-                          .asRuntimeException()
-                );
+                        Status.INVALID_ARGUMENT
+                                .withDescription("Não é possível dividir por zero")
+                                .asRuntimeException());
                 return; // Importante para não continuar a execução
             }
             double result = request.getNumber1() / request.getNumber2();
-            System.out.println("Requisição de Divisão recebida: " + request.getNumber1() + " / " + request.getNumber2());
+            System.out
+                    .println("Requisição de Divisão recebida: " + request.getNumber1() + " / " + request.getNumber2());
             CalcResponse response = CalcResponse.newBuilder().setResult(result).build();
             responseObserver.onNext(response);
             responseObserver.onCompleted();
@@ -75,7 +76,8 @@ public class CalculatorServer {
         server.start();
         System.out.println("Servidor iniciado na porta " + port);
 
-        // Garante que a aplicação principal não termine, mantendo o servidor em execução
+        // Garante que a aplicação principal não termine, mantendo o servidor em
+        // execução
         server.awaitTermination();
     }
 }
