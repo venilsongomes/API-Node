@@ -1,0 +1,29 @@
+// Especifica a sintaxe da versão 3 do Protocol Buffers
+syntax = "proto3";
+
+// Opções específicas para a geração de código Java
+option java_multiple_files = true;
+option java_package = "com.example.grpc.calculator";
+option java_outer_classname = "CalculatorProto";
+
+// O pacote usado pelo serviço
+package calculator;
+
+// Define o serviço "Calculator"
+service Calculator {
+  rpc Add(CalcRequest) returns (CalcResponse) {}
+  rpc Subtract(CalcRequest) returns (CalcResponse) {}
+  rpc Multiply(CalcRequest) returns (CalcResponse) {}
+  rpc Divide(CalcRequest) returns (CalcResponse) {}
+}
+
+// Mensagem de requisição
+message CalcRequest {
+  double number1 = 1;
+  double number2 = 2;
+}
+
+// Mensagem de resposta
+message CalcResponse {
+  double result = 1;
+}
